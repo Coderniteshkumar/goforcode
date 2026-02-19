@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Rocket, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const Footer = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
-                <Code2 className="w-5 h-5 text-primary-foreground" />
+                <Rocket className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="text-xl font-display font-bold">GoForCode</span>
             </div>
