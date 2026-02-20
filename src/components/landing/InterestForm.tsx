@@ -17,7 +17,7 @@ import { z } from "zod";
 const formSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().trim().email("Please enter a valid email"),
-  phone: z.string().trim().min(10, "Please enter a valid phone number").max(13),  
+  phone: z.string().trim().min(10, "Please enter a valid phone number").max(13),
   courseInterest: z.string().min(1, "Please select a course"),
 });
 
@@ -50,10 +50,12 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Partial<FormData> = {};
-        error.errors.forEach((err) => {
+
+        error.issues.forEach((err) => {
           const path = err.path[0] as keyof FormData;
           newErrors[path] = err.message;
         });
+
         setErrors(newErrors);
       }
       return false;
@@ -62,84 +64,84 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
 
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
-    
+
   //   if (!validateForm()) return;
 
   //   setIsSubmitting(true);
-    
+
   //   // Simulate API call
   //   await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
   //   setIsSubmitting(false);
   //   setIsSubmitted(true);
-    
+
   //   toast({
   //     title: "Interest Submitted! 🎉",
   //     description: "We'll contact you shortly with more details.",
   //   });
   // };
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!validateForm()) return;
+    if (!validateForm()) return;
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: "cf782a6f-31f0-4001-903f-30c591df8615",
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        courseInterest: formData.courseInterest,
-        subject: "New Course Inquiry - GoForCode"
-      }),
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      setIsSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        courseInterest: "",
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "cf782a6f-31f0-4001-903f-30c591df8615",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          courseInterest: formData.courseInterest,
+          subject: "New Course Inquiry - GoForCode"
+        }),
       });
 
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          courseInterest: "",
+        });
+
+        toast({
+          title: "Interest Submitted! 🎉",
+          description: "We'll contact you shortly with more details.",
+        });
+      } else {
+        toast({
+          title: "Submission Failed ❌",
+          description: "Please try again later.",
+        });
+      }
+
+    } catch (error) {
+      console.error(error);
       toast({
-        title: "Interest Submitted! 🎉",
-        description: "We'll contact you shortly with more details.",
-      });
-    } else {
-      toast({
-        title: "Submission Failed ❌",
-        description: "Please try again later.",
+        title: "Server Error ❌",
+        description: "Something went wrong.",
       });
     }
 
-  } catch (error) {
-    console.error(error);
-    toast({
-      title: "Server Error ❌",
-      description: "Something went wrong.",
-    });
-  }
-
-  setIsSubmitting(false);
-};
+    setIsSubmitting(false);
+  };
 
 
   if (isSubmitted) {
     return (
-      <section  ref={ref}  className="py-24 px-4 relative">
+      <section ref={ref} className="py-24 px-4 relative">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -153,7 +155,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
               You're In! 🚀
             </h3>
             <p className="text-muted-foreground mb-6">
-              Thank you for your interest in GoForCode! Our team will reach out 
+              Thank you for your interest in GoForCode! Our team will reach out
               to you within 24 hours with all the details.
             </p>
             <p className="text-sm text-muted-foreground">
@@ -166,11 +168,11 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
   }
 
   return (
-    <section  ref={ref} id="contact" className="py-24 px-4 relative">
+    <section ref={ref} id="contact" className="py-24 px-4 relative">
       {/* Background Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] rounded-full blur-3xl opacity-10"
-             style={{ background: 'hsl(var(--primary))' }} />
+          style={{ background: 'hsl(var(--primary))' }} />
       </div>
 
       <div className="max-w-2xl mx-auto relative z-10">
@@ -249,14 +251,14 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
                 placeholder="+91 98765 43210"
                 minLength={10}
                 maxLength={13}
-                
+
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
                 className={`h-12 bg-secondary/50 border-border/50 focus:border-primary ${errors.phone ? 'border-destructive' : ''}`}
               />
               {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
             </div>
-           
+
 
 
             {/* Course Interest Field */}
