@@ -60,24 +60,82 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
     
-    if (!validateForm()) return;
+  //   if (!validateForm()) return;
 
-    setIsSubmitting(true);
+  //   setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+  //   // Simulate API call
+  //   await new Promise(resolve => setTimeout(resolve, 1500));
     
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+  //   setIsSubmitting(false);
+  //   setIsSubmitted(true);
     
-    toast({
-      title: "Interest Submitted! 🎉",
-      description: "We'll contact you shortly with more details.",
+  //   toast({
+  //     title: "Interest Submitted! 🎉",
+  //     description: "We'll contact you shortly with more details.",
+  //   });
+  // };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!validateForm()) return;
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "cf782a6f-31f0-4001-903f-30c591df8615",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        courseInterest: formData.courseInterest,
+        subject: "New Course Inquiry - GoForCode"
+      }),
     });
-  };
+
+    const result = await response.json();
+
+    if (result.success) {
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        courseInterest: "",
+      });
+
+      toast({
+        title: "Interest Submitted! 🎉",
+        description: "We'll contact you shortly with more details.",
+      });
+    } else {
+      toast({
+        title: "Submission Failed ❌",
+        description: "Please try again later.",
+      });
+    }
+
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Server Error ❌",
+      description: "Something went wrong.",
+    });
+  }
+
+  setIsSubmitting(false);
+};
+
 
   if (isSubmitted) {
     return (
@@ -143,7 +201,8 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="glass-card rounded-3xl p-8 md:p-10"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" >
+
             {/* Name Field */}
             <div className="space-y-2">
               <Label htmlFor="name" className="text-sm font-medium flex items-center gap-2">
@@ -179,7 +238,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
             </div>
 
             {/* Phone Field */}
-            { <div className="space-y-2">
+            <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm font-medium flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
                 Mobile Number
@@ -196,7 +255,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
                 className={`h-12 bg-secondary/50 border-border/50 focus:border-primary ${errors.phone ? 'border-destructive' : ''}`}
               />
               {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
-            </div> }
+            </div>
            
 
 
