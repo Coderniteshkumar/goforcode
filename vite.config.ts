@@ -1,14 +1,54 @@
-import path from "path"
-import tailwindcss from "@tailwindcss/vite"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { VitePWA } from "vite-plugin-pwa"; // 1. Import added
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    // 2. PWA Plugin Configuration
+    VitePWA({
+      registerType: "autoUpdate",
+      includeAssets: ["favicon.ico", "apple-touch-icon.png", "logo.png"], // logo.png yahan add karein
+      manifest: {
+        name: "Job-ready Developer | Goforcode Modern Online Coding",
+        short_name: "Goforcode Modern Online Coding",
+        description:
+          "practical aur industry-focused web development skills.",
+        display: "standalone", // Ye browser UI ko hata deta hai
+        display_override: ["fullscreen", "minimal-ui"],
+        orientation: "portrait",
+        background_color: "#000000", // Aapki site dark hai toh background dark rakhein
+        theme_color: "#000000",
+        start_url: "/",
+        scope: "/",
+        icons: [
+          {
+            src: "/logo.png", // Aapne public mein logo.png rakha hai toh wahi use karein
+            sizes: "192x192", // Lekin yaad rahe file ka size 192x192 ya 512x512 ho
+            type: "image/png",
+          },
+          {
+            src: "/logo.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "/logo.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-})
+});
