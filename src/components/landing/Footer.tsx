@@ -89,7 +89,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>hello@goforcode.com</span>
+                <span>info@goforcode.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
-                <span>Bangalore, India</span>
+                <span>Noida, India</span>
               </li>
             </ul>
           </motion.div>

@@ -121,7 +121,7 @@ const CourseDetailsSection = () => {
             </div>
             <div className="text-center md:text-right">
               <p className="text-sm text-muted-foreground mb-2">Next Batch Starting</p>
-              <p className="text-3xl font-display font-bold gradient-text mb-4">Feb 15, 2026</p>
+              <p className="text-3xl font-display font-bold gradient-text mb-4">Coming Soon</p>
               <p className="text-sm text-muted-foreground">Limited seats available</p>
             </div>
           </div>

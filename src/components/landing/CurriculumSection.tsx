@@ -68,7 +68,7 @@ const CurriculumSection = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-wrap justify-center gap-4 mb-16"
         >
-          {["React", "Shadcn UI", "Tailwind CSS", "TypeScript", "Git"].map((tech, index) => (
+          {["React", "Shadcn UI", "Node Js", "TypeScript", "Git"].map((tech, index) => (
             <span
               key={index}
               className="px-4 py-2 rounded-lg glass-card text-sm font-medium border-primary/20"

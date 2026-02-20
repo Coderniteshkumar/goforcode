@@ -50,7 +50,9 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
         >
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Transform Your Future with Code</span>
+          <span className="text-sm text-muted-foreground">Transform Your Future with Code.</span>
+          <span className="text-2xl text-muted-foreground text-white font-bold">Pay After Placement</span>
+
         </motion.div>
 
         {/* Main Headline */}
