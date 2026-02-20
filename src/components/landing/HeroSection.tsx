@@ -51,7 +51,7 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
         >
           <Sparkles className="w-4 h-4 text-primary" />
           <span className="text-sm text-muted-foreground">Transform Your Future with Code.</span>
-          <span className="text-2xl text-muted-foreground text-white font-bold">Pay After Placement</span>
+          <span className="text-1xl text-muted-foreground text-white font-bold">Pay After Placement</span>
 
         </motion.div>
 

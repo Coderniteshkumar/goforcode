@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Laptop, LaptopMinimalCheckIcon, Menu, Rocket, RocketIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { text } from "stream/consumers";
 
 interface NavbarProps {
   onShowInterest: () => void;
@@ -21,7 +22,7 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
 
   const navLinks = [
     { label: "About", href: "#" },
-    { label: "Curriculum", href: "#curriculum" },
+    { label: "Curriculum", href: "#curriculum"},
     { label: "Features", href: "#features" },
     { label: "Contact", href: "#contact" },
     
@@ -41,12 +42,13 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
       >
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          { <a href="/" className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center">
               <Rocket className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-lg font-display font-bold">GoForCode</span>
-          </a>
+            <span className="text-2xl  font-display font-bold"><span text-2xl style={{ color: "#4489F6" }}>GoFor</span>Code </span>
+          </a> }
+        
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
