@@ -46,7 +46,7 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
             <div className="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center">
               <Rocket className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-2xl  font-display font-bold">Code </span>
+            <span className="text-2xl  font-display font-bold"><span text-2xl style={{ color: "#4489F6" }}>GoFor</span>Code </span>
           </a> }
         
 
