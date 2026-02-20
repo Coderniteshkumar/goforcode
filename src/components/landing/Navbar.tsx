@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Laptop, LaptopMinimalCheckIcon, Menu, Rocket, RocketIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { text } from "stream/consumers";
+import { Menu, Rocket, X } from "lucide-react";
 
 interface NavbarProps {
   onShowInterest: () => void;
@@ -46,8 +45,7 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
             <div className="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center">
               <Rocket className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-2xl  font-display font-bold"><span text-2xl style={{ color: "#4489F6" }}>GoFor</span>Code </span>
-          </a> }
+            <span className="text-2xl  font-display font-bold"><span text-2xl style={{ color: "#4489F6" }}>GoFor</span>Code </span>          </a> }
         
 
           {/* Desktop Nav Links */}
