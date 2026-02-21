@@ -93,14 +93,19 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
             Show Interest
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="px-8 py-6 text-lg border-border/50 hover:border-primary/50 hover:bg-primary/5"
+          <a
+            href="/base.apk"
+            download="Gfc.apk" // Download hone par ye naam dikhega
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Download className="mr-2 w-5 h-5" />
-            Dowmload App
-          </Button>
+            <Button
+              variant="outline"
+              className="rounded-full px-6 border-border"
+            >
+              <Download /> Download App
+            </Button>
+          </a>
         </motion.div>
 
         {/* Stats */}
