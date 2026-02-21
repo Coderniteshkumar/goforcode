@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps {
@@ -11,7 +11,7 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
-      
+
       {/* Animated Grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -74,7 +74,7 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance"
         >
-          Master React & Shadcn UI with hands-on projects, expert mentorship, 
+          Master React & Shadcn UI with hands-on projects, expert mentorship,
           and job-ready skills. From beginner to professional developer.
         </motion.p>
 
@@ -98,7 +98,7 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
             variant="outline"
             className="px-8 py-6 text-lg border-border/50 hover:border-primary/50 hover:bg-primary/5"
           >
-            <Code2 className="mr-2 w-5 h-5" />
+            <Download className="mr-2 w-5 h-5" />
             Dowmload App
           </Button>
         </motion.div>
