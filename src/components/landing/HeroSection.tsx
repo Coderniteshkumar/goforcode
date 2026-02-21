@@ -99,7 +99,7 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
             className="px-8 py-6 text-lg border-border/50 hover:border-primary/50 hover:bg-primary/5"
           >
             <Code2 className="mr-2 w-5 h-5" />
-            View Curriculum
+            Dowmload App
           </Button>
         </motion.div>
 
