@@ -20,8 +20,7 @@ import { Laptop, Code2 } from "lucide-react";
 
 export default function LogoIcon() {
   return (
-    <div className="h-screen bg-black flex flex-col justify-center items-center">
-
+<div className="h-screen bg-[#0b1a2b] flex flex-col justify-center items-center">
       {/* Icon Container */}
       <div className="relative w-[150px] h-[90px] flex items-center justify-center">
 
