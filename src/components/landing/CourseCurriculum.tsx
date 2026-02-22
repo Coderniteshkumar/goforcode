@@ -97,9 +97,9 @@ export const CourseCurriculum = () => {
             setIsSubmitting(false);
         }
     };
-
+//   id="course"= scroll page 
     return (
-        <section id="course" className="py-20 bg-[#030712] text-white min-h-screen">
+        <section  className="py-20 bg-[#030712] text-white min-h-screen">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight">
