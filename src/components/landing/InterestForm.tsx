@@ -88,6 +88,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
 
     setIsSubmitting(true);
 
+      // email information data form
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -134,7 +135,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
         description: "Something went wrong.",
       });
     }
-
+  
     setIsSubmitting(false);
   };
 

@@ -1,13 +1,14 @@
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, Rocket, X } from "lucide-react";
+import { Menu, Rocket, X, LogIn } from "lucide-react"; // Added LogIn icon
 
 interface NavbarProps {
-  onShowInterest: () => void;
+  onLogin?: () => void; // Renamed prop for clarity
 }
 
-const Navbar = ({ onShowInterest }: NavbarProps) => {
+const Navbar = ({ onLogin }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,9 +22,11 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
 
   const navLinks = [
     { label: "About", href: "#" },
-    { label: "Curriculum", href: "#curriculum"},
+    { label: "Curriculum", href: "#curriculum" },
     { label: "Features", href: "#features" },
     { label: "Contact", href: "#contact" },
+    { label: "Course", href: "#course" },
+    
     
   ];
 
@@ -34,19 +37,21 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3" 
+          isScrolled
+            ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          { <a href="/" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center">
               <Rocket className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-2xl  font-display font-bold"><span text-2xl style={{ color: "#4489F6" }}>GoFor</span>Code </span>          </a> }
-        
+            <span className="text-2xl font-display font-bold">
+              <span style={{ color: "#4489F6" }}>GoFor</span>Code
+            </span>
+          </a>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -61,13 +66,15 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Login Button (Desktop) */}
           <div className="hidden md:block">
             <Button
-              onClick={onShowInterest}
-              className="gradient-bg hover:scale-105 transition-transform"
+              variant="outline"
+              onClick={onLogin}
+              className="border-[#4489F6] text-[#4489F6] hover:bg-[#4489F6] hover:text-white transition-all gap-2"
             >
-              Show Interest
+              <LogIn className="w-4 h-4" />
+              Login
             </Button>
           </div>
 
@@ -104,14 +111,17 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
                     {link.label}
                   </a>
                 ))}
+                
+                {/* Login Button (Mobile) */}
                 <Button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    onShowInterest();
+                    onLogin?.();
                   }}
-                  className="mt-4 w-full gradient-bg"
+                  className="mt-4 w-full gradient-bg gap-2"
                 >
-                  Show Interest
+                  <LogIn className="w-4 h-4" />
+                  Login
                 </Button>
               </div>
             </div>
@@ -123,3 +133,5 @@ const Navbar = ({ onShowInterest }: NavbarProps) => {
 };
 
 export default Navbar;
+
+
