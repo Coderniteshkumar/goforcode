@@ -5,11 +5,12 @@ import TrustSection from "@/components/landing/TrustSection";
 import CurriculumSection from "@/components/landing/CurriculumSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import CourseDetailsSection from "@/components/landing/CourseDetailsSection";
-// import { DemoVideo } from "@/components/landing/DemoVideo";
 import InterestForm from "@/components/landing/InterestForm";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 import { CourseCurriculum } from "@/components/landing/CourseCurriculum";
+// WhatsApp Button Import karein
+import WhatsAppButton from "@/components/landing/WhatsAppButton"; 
 
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
@@ -29,11 +30,16 @@ const Index = () => {
         <FeaturesSection />
         <CourseDetailsSection />
         <CourseCurriculum />
-        <InterestForm ref={formRef} />
+        <div ref={formRef}>
+          <InterestForm />
+        </div>
         <CTASection onShowInterest={scrollToForm} />
       </main>
 
       <Footer />
+
+      {/* WhatsApp Floating Button yahan add kiya gaya hai */}
+      <WhatsAppButton />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import {  Download, Sparkles } from "lucide-react";
+import {  Download,  Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 
@@ -125,13 +125,13 @@ const HeroSection = () => {
 
           <a href="Gfc Fee Structure.pdf" download="Goforcode Fee Structure.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="rounded-full px-6 border-border">
-              <Download className="mr-2 h-4 w-4" /> Download Fee Structure
+              <Download className="mr-2 h-4 w-4" /> Fee Structure
             </Button>
           </a>
 
           <a href="GFC mastery program.pdf" download="Goforcode mastery program.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="rounded-full px-6 border-border">
-              <Download className="mr-2 h-4 w-4" /> Download Course Program
+              <Download className="mr-2 h-4 w-4" /> Course Program
             </Button>
           </a>
         </motion.div>
