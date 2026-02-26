@@ -42,7 +42,7 @@ const CourseDetailsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 relative">
+    <section className="py-12 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div

@@ -38,7 +38,7 @@ const CurriculumSection = () => {
   ];
 
   return (
-    <section id="curriculum" className="py-24 px-4 relative">
+    <section id="curriculum" className="py-12 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div

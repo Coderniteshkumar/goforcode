@@ -36,7 +36,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-24 px-4 relative bg-gradient-to-b from-background to-secondary/10">
+    <section id="features" className="py-12 px-4 relative bg-gradient-to-b from-background to-secondary/10">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div

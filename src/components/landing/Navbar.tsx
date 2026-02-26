@@ -28,27 +28,29 @@ const Navbar = ({ onLoginSuccess }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  //  login api
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
-        body: JSON.stringify({ username: email, password: password }),
+        body: JSON.stringify({ email: email, password: password }),
         headers: { "Content-type": "application/json; charset=UTF-8" },
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setTimeout(() => {
-          setIsLoading(false);
-          setIsLoginOpen(false);
-          onLoginSuccess?.(data);
-          setEmail(""); setPassword(""); // Reset form
-        }, 1500);
+        localStorage.setItem('user',data.user)
+        localStorage.setItem('token',data.token)
+        if (onLoginSuccess) {
+          onLoginSuccess(data);
+        }
+        setIsLoading(false);
+        setIsLoginOpen(false);
       } else {
         throw new Error("Invalid credentials");
       }

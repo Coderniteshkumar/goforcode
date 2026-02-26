@@ -8,7 +8,7 @@ interface CTASectionProps {
 
 const CTASection = ({ onShowInterest }: CTASectionProps) => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="py-12 px-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
       

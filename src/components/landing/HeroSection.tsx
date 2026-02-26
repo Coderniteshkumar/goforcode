@@ -1,12 +1,38 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import {  Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
-interface HeroSectionProps {
-  onShowInterest: () => void;
-}
+// interface HeroSectionProps {
+//   onShowInterest: () => void;
+// }
 
-const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
+// --- Helper Component for Counting Animation ---
+const StatCounter = ({ value }: { value: string }) => {
+  const count = useMotionValue(0);
+  // Extract number from string (e.g., "500+" becomes 500)
+  const numericValue = parseInt(value.replace(/[^0-9]/g, "")) || 0;
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const suffix = value.replace(/[0-9]/g, ""); // Extract "+" or "%" or "/"
+
+  useEffect(() => {
+    const controls = animate(count, numericValue, {
+      duration: 2, // 2 seconds animation
+      delay: 0.8,  // Hero section ke load hone ke thodi der baad start hoga
+      ease: "easeOut",
+    });
+    return controls.stop;
+  }, [numericValue, count]);
+
+  return (
+    <motion.span>
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </motion.span>
+  );
+};
+
+const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
       {/* Background Effects */}
@@ -52,7 +78,6 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
           <Sparkles className="w-4 h-4 text-primary" />
           <span className="text-sm text-muted-foreground">Transform Your Future with Code.</span>
           <span className="text-1xl text-muted-foreground text-white font-bold">Pay After Placement</span>
-
         </motion.div>
 
         {/* Main Headline */}
@@ -85,30 +110,33 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Button
-            size="lg"
+          {/* <Button 
             onClick={onShowInterest}
-            className="group px-8 py-6 text-lg font-semibold gradient-bg glow-primary hover:scale-105 transition-transform"
+            className="rounded-full px-6 bg-[#4489F6] hover:bg-[#3574d3] text-white"
           >
-            Show Interest
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <a
-            href="/base.apk"
-            download="Gfc.apk" // Download hone par ye naam dikhega
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-border"
-            >
-              <Download /> Download App
+            <ArrowRight className="mr-2 h-4 w-4" /> Apply Now
+          </Button> */}
+
+          <a href="/base.apk" download="Gfc.apk" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="rounded-full px-6 border-border">
+              <Download className="mr-2 h-4 w-4" /> Download App
+            </Button>
+          </a>
+
+          <a href="Gfc Fee Structure.pdf" download="Goforcode Fee Structure.pdf" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="rounded-full px-6 border-border">
+              <Download className="mr-2 h-4 w-4" /> Download Fee Structure
+            </Button>
+          </a>
+
+          <a href="GFC mastery program.pdf" download="Goforcode mastery program.pdf" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="rounded-full px-6 border-border">
+              <Download className="mr-2 h-4 w-4" /> Download Course Program
             </Button>
           </a>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats with Counter Animation */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,11 +147,11 @@ const HeroSection = ({ onShowInterest }: HeroSectionProps) => {
             { value: "500+", label: "Students Trained" },
             { value: "95%", label: "Placement Rate" },
             { value: "10+", label: "Live Projects" },
-            { value: "24/7", label: "Support" },
+            { value: "24h", label: "Support" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl sm:text-3xl font-display font-bold gradient-text">
-                {stat.value}
+                <StatCounter value={stat.value} />
               </div>
               <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
             </div>

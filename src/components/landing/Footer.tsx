@@ -16,6 +16,8 @@ const Footer = () => {
     { label: "Curriculum", href: "#curriculum" },
     { label: "FAQs", href: "#" },
     { label: "Contact", href: "#contact" },
+    { label: "Course", href: "/course" },
+
   ];
 
   return (
@@ -93,7 +95,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>+91 6204579420</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary mt-1" />

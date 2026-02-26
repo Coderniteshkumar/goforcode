@@ -142,7 +142,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
 
   if (isSubmitted) {
     return (
-      <section ref={ref} className="py-24 px-4 relative">
+      <section ref={ref} className="py-18 px-4 relative">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -169,7 +169,7 @@ const InterestForm = forwardRef<HTMLDivElement>((_, ref) => {
   }
 
   return (
-    <section ref={ref} id="contact" className="py-24 px-4 relative">
+    <section ref={ref} id="contact" className="py-12 px-4 relative">
       {/* Background Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] rounded-full blur-3xl opacity-10"

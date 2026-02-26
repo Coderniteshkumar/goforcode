@@ -23,7 +23,7 @@ const Index = () => {
       <Navbar />
 
       <main>
-        <HeroSection onShowInterest={scrollToForm} />
+        <HeroSection />
         <TrustSection />
         <CurriculumSection />
         <FeaturesSection />
