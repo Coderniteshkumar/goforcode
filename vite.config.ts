@@ -14,8 +14,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "logo.png"], // logo.png yahan add karein
       manifest: {
-        name: "Job-ready Developer | Goforcode Modern Online Coding",
-        short_name: "Goforcode Modern Online Coding",
+        name: "Goforcode Modern Online Coding",
+        short_name: "GFC",
         description:
           "practical aur industry-focused web development skills.",
         display: "standalone", // Ye browser UI ko hata deta hai
