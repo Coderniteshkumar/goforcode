@@ -64,7 +64,7 @@ const Navbar = ({ onLoginSuccess }: NavbarProps) => {
     { label: "About", href: "#" },
     { label: "Curriculum", href: "#curriculum" },
     { label: "Features", href: "#features" },
-    { label: "Contact", href: "#contact" },
+    { label: "Enquire Now", href: "#contact" },
     { label: "Course", href: "/course" },
   ];
 

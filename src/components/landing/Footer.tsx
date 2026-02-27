@@ -15,7 +15,7 @@ const Footer = () => {
     { label: "About Us", href: "#" },
     { label: "Curriculum", href: "#curriculum" },
     { label: "FAQs", href: "#" },
-    { label: "Contact", href: "#contact" },
+    { label: "Enquire Now", href: "#contact" },
     { label: "Course", href: "/course" },
 
   ];
@@ -91,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@goforcode.com</span>
+                <span>goforcode47@gmail.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
