@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa"; // WhatsApp icon yahan se aayega
 
 const WhatsAppButton: React.FC = () => {
-  const phoneNumber = "6204579420"; 
+  const phoneNumber = "916204579420"; 
   const message = "I'm interested, please share course details";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
