@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 const students = [
   { id: 1, img: "/image/vinay.jpeg", name: "Vinay Kumar", company: "Talentrise Technokrate", position: "Web Development" },
