@@ -6,8 +6,12 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "Youtub" },
+{ 
+  icon: Linkedin, 
+  href: "https://www.linkedin.com/company/goforcode-tech", 
+  label: "LinkedIn" 
+} ,
+  { icon: Youtube, href: "#", label: "Youtub" },
     { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
@@ -99,7 +103,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
-                <span>Noida, India</span>
+                <span>Patna HQ | Noida Expansion, India</span>
               </li>
             </ul>
           </motion.div>

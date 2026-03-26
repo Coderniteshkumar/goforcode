@@ -2,6 +2,7 @@ import { useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import TrustSection from "@/components/landing/TrustSection";
+import PlacementScroll from "@/components/landing/PlacementScroll";
 import CurriculumSection from "@/components/landing/CurriculumSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import CourseDetailsSection from "@/components/landing/CourseDetailsSection";
@@ -11,6 +12,7 @@ import Footer from "@/components/landing/Footer";
 import { CourseCurriculum } from "@/components/landing/CourseCurriculum";
 // WhatsApp Button Import karein
 import WhatsAppButton from "@/components/landing/WhatsAppButton"; 
+
 
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
@@ -28,6 +30,8 @@ const Index = () => {
         <TrustSection />
         <CurriculumSection />
         <FeaturesSection />
+                <PlacementScroll />
+
         <CourseDetailsSection />
         <CourseCurriculum />
         <div ref={formRef}>
@@ -45,3 +49,6 @@ const Index = () => {
 };
 
 export default Index;
+
+
+
