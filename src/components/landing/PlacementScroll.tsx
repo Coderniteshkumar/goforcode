@@ -6,7 +6,7 @@ const students = [
   { id: 3, img: "/image/kishan.jpeg", name: "Kishan Kumar", company: "Satya Sattelite", position: "Frontend Developer" },
   { id: 4, img: "/image/deepa.jpeg", name: "Deepa Kour", company: "Talentrise Technokrate", position: "React Developer" },
   { id: 5, img: "/image/bablu.jpeg", name: "Bablu Kumar", company: "RT Tech solutions", position: "React Developer" },
-  { id: 6, img: "https://i.pravatar.cc/150?u=6", name: "Neha Gupta", company: "Apple", position: "iOS Developer" },
+  { id: 6, img: "https://i.pravatar.cc/150?u=6", name: "Neha Gupta", company: "Dzone India", position: "Full Stack Developer" },
 ];
 
 const PlacementScroll = () => {

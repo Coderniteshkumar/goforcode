@@ -34,7 +34,7 @@ const StatCounter = ({ value }: { value: string }) => {
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-22">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
         >
           <Sparkles className="w-4 h-4 text-primary" />
           <span className="text-sm text-muted-foreground">Transform Your Future with Code.</span>
-          <span className="text-1xl text-muted-foreground text-white font-bold">Pay After Placement</span>
+          <span className="text-1xl text-muted-foreground text-white font-bold">Training + Internship with Placement Support.</span>
         </motion.div>
 
         {/* Main Headline */}
@@ -123,7 +123,7 @@ const HeroSection = () => {
             </Button>
           </a>
 
-          <a href="Gfc Fee Structure.pdf" download="Goforcode Fee Structure.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="fee Structure.pdf" download="Goforcode fee Structure.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="rounded-full px-6 border-border">
               {/* <div className="mt-0 bg-white">
               <img src="fee.png" alt="Fee Structure" className="rounded-lg shadow-lg h-4 w-4" />
@@ -132,7 +132,7 @@ const HeroSection = () => {
             </Button>
           </a>
 
-          <a href="GFC mastery program.pdf" download="Goforcode mastery program.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="mastery program.pdf" download="Goforcode mastery program.pdf" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="rounded-full px-6 border-border">
               <BookOpen className="mr-2 h-4 w-4" /> Course Program
             </Button>

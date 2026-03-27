@@ -5,8 +5,15 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast"; // Agar aap shadcn toast use kar rahe hain
 
 const VIDEO_DATA = [
-    { id: 1, title: "Introduction to React", duration: "10:30", thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { id: 2, title: "Setting up your Environment", duration: "05:45", thumbnail: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    // { id: 1, title: "Introduction to Course", duration: "10:30", thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800", url: "https://youtu.be/tOYkV6Yhrhs?si=K9lMHB6rSaG-sasJ" },
+    { 
+  id: 1, 
+  title: "Introduction to Course", 
+  duration: "8:25", 
+  thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800", 
+  url: "https://www.youtube.com/embed/tOYkV6Yhrhs" // Best for web players
+},
+    { id: 2, title: "Setting up your Environment", duration: "05:45", thumbnail: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800", url: "https://www.youtube.com/embed/tOYkV6Yhrhs" },
     { id: 3, title: "Advanced Hooks & Patterns", duration: "15:20", thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800", url: "#" },
     { id: 4, title: "State Management with Redux", duration: "22:10", thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800", url: "#" },
     { id: 5, title: "Backend Integration", duration: "22:10", thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800", url: "#" },
