@@ -1,13 +1,13 @@
 // import React from "react";
 
 const students = [
-  { id: 1, img: "/image/vinay.jpeg", name: "Vinay Kumar", company: "Talentrise Technokrate", position: "Web Development" },
-  { id: 2, img: "/image/gulshan.jpeg", name: "Gulshan Kumar", company: "Talentrise Technokrate", position: "React Developer" },
-  { id: 3, img: "/image/kishan.jpeg", name: "Kishan Kumar", company: "Satya Sattelite", position: "Frontend Developer" },
-  { id: 4, img: "/image/deepa.jpeg", name: "Deepa Kour", company: "Talentrise Technokrate", position: "React Developer" },
-  { id: 5, img: "/image/bablu.jpeg", name: "Bablu Kumar", company: "RT Tech solutions", position: "React Developer" },
-  { id: 6, img: "https://i.pravatar.cc/150?u=6", name: "Neha Gupta", company: "Dzone India", position: "Full Stack Developer" },
-    { id: 7, img: "/image/sonu.jpeg", name: "Sonu Kumar", company: "Talentrise Technokrate", position: "React Developer" },
+  { id: 1, img: "/image/vinay.jpeg", name: "Vinay Kumar", company: "Talentrise Technokrate", position: "Web Development",package: "3 LPA" },
+  { id: 2, img: "/image/gulshan.jpeg", name: "Gulshan Kumar", company: "Talentrise Technokrate", position: "React Developer",package: "2.8 LPA" },
+  { id: 3, img: "/image/kishan.jpeg", name: "Kishan Kumar", company: "Satya Sattelite", position: "Frontend Developer",package: "2 LPA" },
+  { id: 4, img: "/image/deepa.jpeg", name: "Deepa Kour", company: "Talentrise Technokrate", position: "React Developer" ,package: "2.5 LPA"},
+  { id: 5, img: "/image/bablu.jpeg", name: "Bablu Kumar", company: "RT Tech solutions", position: "React Developer",package: "3 LPA" },
+  { id: 6, img: "https://i.pravatar.cc/150?u=6", name: "Neha Gupta", company: "Dzone India", position: "Full Stack Developer",package: "4 LPA" },
+  { id: 7, img: "/image/sonu.jpeg", name: "Sonu Kumar", company: "Talentrise Technokrate", position: "React Developer",package: "3 LPA" },
 
 ];
 
@@ -46,6 +46,11 @@ const PlacementScroll = () => {
             {/* 4. Position */}
             <p className="text-gray-400 text-xs italic">
               {student.position}
+            </p>
+
+            {/* 5. package */}
+            <p className="text-gray-400 text-xs italic">
+              {student.package}
             </p>
 
           </div>
